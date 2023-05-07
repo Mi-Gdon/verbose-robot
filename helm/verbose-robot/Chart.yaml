@@ -1,0 +1,4 @@
+apiVersion: v2
+name: verbose-robot
+description: verbose-robot deployment
+version: 0.1.0
