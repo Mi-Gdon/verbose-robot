@@ -1,0 +1,26 @@
+revisionHistoryLimit: 5
+
+#replica set
+replicas: 1
+
+# create a service specific service account
+serviceAccount:
+  create: true
+  name: "verbose-robot"
+
+# service name
+service:
+  name: "verbose-robot"
+# update stratgey
+strategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 33%
+    maxUnavailable: 33%
+environment:
+  PHOTOPRISM_ADMIN_USER: "TheRobot"
+  PHOTOPRISM_STORAGE_PATH: "/app/images/"
+
+# define the persistent volume claim
+persistence:
+  enabled: false
